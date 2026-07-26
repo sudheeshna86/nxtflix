@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import MovieCarousel from '../../components/MovieCarousel';
 import MovieCard from '../../components/MovieCard';
@@ -10,7 +9,6 @@ import './index.css';
 
 function Home() {
   const [selectedGenre, setSelectedGenre] = useState('All');
-  const navigate = useNavigate();
 
   const trendingMovies = getTrendingMovies();
   const freshReleases = getFreshReleaseMovies();
