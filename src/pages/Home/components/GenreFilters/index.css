@@ -1,0 +1,49 @@
+.genre-filters {
+  padding: 1.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.genre-chip {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.genre-chip:hover {
+  border-color: #dc1414;
+  color: #dc1414;
+}
+
+.genre-chip.active {
+  background-color: #dc1414;
+  border-color: #dc1414;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .genre-filters {
+    padding: 1rem 1rem;
+  }
+
+  .filters-container {
+    gap: 0.75rem;
+  }
+
+  .genre-chip {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+  }
+}
