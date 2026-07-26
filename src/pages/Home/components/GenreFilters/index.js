@@ -1,17 +1,8 @@
+import { getGenres } from '../../../../utils/movieHelpers';
 import './index.css';
 
-function GenreFilters() {
-  const genres = [
-    'All',
-    'Action',
-    'Drama',
-    'Comedy',
-    'Thriller',
-    'Sci-Fi',
-    'Romance',
-    'Horror',
-    'Fantasy',
-  ];
+function GenreFilters({ selectedGenre, onGenreSelect }) {
+  const genres = getGenres();
 
   return (
     <div className="genre-filters">
@@ -19,7 +10,8 @@ function GenreFilters() {
         {genres.map((genre) => (
           <button
             key={genre}
-            className={`genre-chip ${genre === 'All' ? 'active' : ''}`}
+            className={`genre-chip ${genre === selectedGenre ? 'active' : ''}`}
+            onClick={() => onGenreSelect(genre)}
           >
             {genre}
           </button>

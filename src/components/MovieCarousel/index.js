@@ -1,21 +1,20 @@
 import MovieCard from '../MovieCard';
 import './index.css';
 
-function MovieCarousel({ title, movies }) {
+function MovieCarousel({ title, movies, direction = 'left' }) {
+  const loopedMovies = [...movies, ...movies];
+
   return (
     <div className="carousel-section">
       <h2 className="carousel-title">{title}</h2>
       <div className="carousel-container">
-        <div className="carousel-row">
-          {movies.map((movie) => (
-            <div key={movie.id} className="carousel-item">
+        <div className={`carousel-row ${direction}`}>
+          {loopedMovies.map((movie, index) => (
+            <div key={`${movie.id}-${index}`} className="carousel-item">
               <MovieCard
+                id={movie.id}
                 poster={movie.poster}
-                rating={movie.rating}
-                title={movie.title}
-                genre={movie.genre}
-                year={movie.year}
-                duration={movie.duration}
+                variant="carousel"
               />
             </div>
           ))}

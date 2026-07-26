@@ -1,11 +1,37 @@
+import { useNavigate } from 'react-router-dom';
 import './index.css';
 
-function MovieCard({ poster, rating, title, genre, year, duration }) {
+function MovieCard({ id, poster, rating, title, genre, year, duration, variant = 'grid' }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/movies/${id}`);
+  };
+
+  if (variant === 'carousel') {
+    return (
+      <div className="movie-card carousel-card" onClick={handleClick}>
+        <div className="movie-poster">
+          <img src={poster} alt={title} className="poster-image" />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="movie-card">
+    <div className="movie-card grid-card" onClick={handleClick}>
       <div className="movie-poster">
         <img src={poster} alt={title} className="poster-image" />
         <div className="rating-badge">{rating}</div>
+        <div className="play-overlay">
+          <svg
+            className="play-icon"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
       </div>
       <div className="movie-info">
         <h3 className="movie-title">{title}</h3>

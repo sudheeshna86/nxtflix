@@ -1,39 +1,41 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import MovieCarousel from '../../components/MovieCarousel';
+import MovieCard from '../../components/MovieCard';
 import HeroBanner from './components/HeroBanner';
 import GenreFilters from './components/GenreFilters';
-import moviesData from '../../data/moviesData';
+import { getTrendingMovies, getFreshReleaseMovies, getMoviesByGenre } from '../../utils/movieHelpers';
 import './index.css';
 
 function Home() {
-  const trendingMovies = moviesData.slice(0, 12);
-  const freshReleases = moviesData.slice(12, 24);
+  const [selectedGenre, setSelectedGenre] = useState('All');
+  const navigate = useNavigate();
+
+  const trendingMovies = getTrendingMovies();
+  const freshReleases = getFreshReleaseMovies();
+  const filteredMovies = getMoviesByGenre(selectedGenre);
 
   return (
     <div className="home-page">
       <Header />
       <HeroBanner />
-      <MovieCarousel title="Trending Now" movies={trendingMovies} />
-      <MovieCarousel title="Fresh Releases" movies={freshReleases} />
-      <GenreFilters />
+      <MovieCarousel title="Trending Now" movies={trendingMovies} direction="left" />
+      <MovieCarousel title="Fresh Releases" movies={freshReleases} direction="right" />
+      <GenreFilters selectedGenre={selectedGenre} onGenreSelect={setSelectedGenre} />
       <div className="movies-grid">
-        {moviesData.map((movie) => (
-          <div key={movie.id} className="grid-item">
-            <div className="movie-grid-card">
-              <div className="grid-poster">
-                <img src={movie.poster} alt={movie.title} className="grid-image" />
-                <div className="grid-rating-badge">{movie.rating}</div>
-              </div>
-              <div className="grid-info">
-                <h3 className="grid-title">{movie.title}</h3>
-                <div className="grid-meta">
-                  <span className="grid-genre">{movie.genre}</span>
-                  <span className="grid-year">{movie.year}</span>
-                </div>
-                <p className="grid-duration">{movie.duration}</p>
-              </div>
-            </div>
-          </div>
+        {filteredMovies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            id={movie.id}
+            poster={movie.poster}
+            rating={movie.rating}
+            title={movie.title}
+            genre={movie.genre}
+            year={movie.year}
+            duration={movie.duration}
+            variant="grid"
+          />
         ))}
       </div>
     </div>
