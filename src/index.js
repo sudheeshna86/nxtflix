@@ -4,13 +4,16 @@ import {BrowserRouter} from 'react-router-dom'
 
 import './index.css'
 import App from './App'
+import { WatchLaterProvider } from './context/WatchLaterContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <WatchLaterProvider>
+        <App />
+      </WatchLaterProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

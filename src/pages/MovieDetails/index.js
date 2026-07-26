@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header';
+import { useWatchLater } from '../../context/WatchLaterContext';
 import movies from '../../data/movies';
 import './index.css';
 
@@ -9,6 +10,8 @@ function MovieDetails() {
   const navigate = useNavigate();
   const movieId = Number(id);
   const movie = movies.find((item) => item.id === movieId);
+  const { isInWatchLater, toggleWatchLater } = useWatchLater();
+  const alreadySaved = isInWatchLater(movieId);
 
   useEffect(() => {
     if (!movie) {
@@ -44,7 +47,12 @@ function MovieDetails() {
             <p className="movie-overview">{movie.overview}</p>
 
             <div className="movie-actions">
-              <button className="watch-later-btn">+ Watch Later</button>
+              <button
+                className={`watch-later-btn ${alreadySaved ? 'watch-later-btn-active' : ''}`}
+                onClick={() => toggleWatchLater(movie)}
+              >
+                {alreadySaved ? '✓ Added to Watch Later' : '+ Watch Later'}
+              </button>
               <button className="go-back-btn" onClick={() => navigate(-1)}>
                 Go Back
               </button>
