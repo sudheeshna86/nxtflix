@@ -5,17 +5,39 @@ import Home from '../pages/Home'
 import MovieDetails from '../pages/MovieDetails'
 import WatchLater from '../pages/WatchLater'
 import NotFound from '../pages/NotFound'
+import ProtectedRoute from '../components/ProtectedRoute'
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
 
-      <Route path="/" element={<Home />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/movies/:id" element={<MovieDetails />} />
+      <Route
+        path="/movies/:id"
+        element={
+          <ProtectedRoute>
+            <MovieDetails />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/watch-later" element={<WatchLater />} />
+      <Route
+        path="/watch-later"
+        element={
+          <ProtectedRoute>
+            <WatchLater />
+          </ProtectedRoute>
+        }
+      />
 
       <Route path="/not-found" element={<NotFound />} />
 
