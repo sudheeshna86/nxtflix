@@ -1,10 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import { useWatchLater } from '../../context/WatchLaterContext';
 import './index.css';
 
 function Header() {
+  const navigate = useNavigate();
   const { watchLater } = useWatchLater();
   const hasWatchLaterItems = watchLater.length > 0;
+
+  const handleLogout = () => {
+    Cookies.remove('jwt_token');
+    navigate('/login', { replace: true });
+  };
 
   return (
     <header className="header">
@@ -21,7 +28,7 @@ function Header() {
               {hasWatchLaterItems ? <span className="watch-later-badge">{watchLater.length}</span> : null}
             </Link>
           </nav>
-          <button className="logout-btn">Logout</button>
+          <button className="logout-btn" type="button" onClick={handleLogout}>Logout</button>
         </div>
       </div>
     </header>
