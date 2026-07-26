@@ -17,6 +17,13 @@ body {
   gap: 1rem;
 }
 
+.home-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
 @media (max-width: 1200px) {
   .movies-grid {
     grid-template-columns: repeat(5, 1fr);
