@@ -18,6 +18,25 @@ function MovieCard({ id, poster, rating, title, genre, year, duration, variant =
     );
   }
 
+  if (variant === 'watchLater') {
+    return (
+      <div className="movie-card watch-later-card" onClick={handleClick}>
+        <div className="movie-poster">
+          <img src={poster} alt={title} className="poster-image" />
+          <div className="rating-badge">{rating}</div>
+        </div>
+        <div className="movie-info">
+          <h3 className="movie-title">{title}</h3>
+          <div className="movie-meta">
+            <span className="movie-genre">{genre}</span>
+            <span className="movie-year">{year}</span>
+          </div>
+          <p className="movie-duration">{duration}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="movie-card grid-card" onClick={handleClick}>
       <div className="movie-poster">

@@ -26,6 +26,59 @@
   margin-bottom: 0.75rem;
 }
 
+.watch-later-card {
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: none;
+}
+
+.watch-later-card:hover {
+  transform: none;
+}
+
+.watch-later-card .movie-poster {
+  margin-bottom: 0;
+}
+
+.watch-later-card .movie-info {
+  padding: 1rem;
+}
+
+.watch-later-card .movie-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.watch-later-card .movie-meta {
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.watch-later-card .movie-duration {
+  color: #aaa;
+  margin: 0;
+}
+
+.watch-later-card .play-overlay {
+  display: none;
+}
+
+.watch-later-card .rating-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: #dc1414;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
 .movie-poster {
   position: relative;
   border-radius: 4px;
