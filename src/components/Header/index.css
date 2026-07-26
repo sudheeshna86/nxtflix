@@ -9,7 +9,7 @@
 .header-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,11 +20,13 @@
 }
 
 .header-logo {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: #dc1414;
   margin: 0;
   font-weight: bold;
   letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .header-right {
@@ -68,9 +70,9 @@
   background-color: #dc1414;
   color: #fff;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 0.4rem 1.25rem;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -87,6 +89,7 @@
 
   .header-logo {
     font-size: 1.2rem;
+    text-decoration: none;
   }
 
   .header-right {

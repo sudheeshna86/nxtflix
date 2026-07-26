@@ -1,13 +1,13 @@
 .carousel-section {
-  padding: 2rem 2rem;
+  padding: 1.25rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .carousel-title {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   color: #fff;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0.25rem;
   font-weight: bold;
 }
 
@@ -40,12 +40,7 @@
 
 .carousel-item {
   flex: 0 0 auto;
-  width: 200px;
-  transition: transform 0.3s ease;
-}
-
-.carousel-item:hover {
-  transform: scale(1.03);
+  width: 174px;
 }
 
 @keyframes marquee-left {
@@ -68,13 +63,13 @@
 
 @media (max-width: 1024px) {
   .carousel-item {
-    width: 160px;
+    width: 154px;
   }
 }
 
 @media (max-width: 768px) {
   .carousel-section {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
   }
 
   .carousel-title {
@@ -83,7 +78,7 @@
   }
 
   .carousel-item {
-    width: 140px;
+    width: 132px;
   }
 }
 
@@ -97,6 +92,6 @@
   }
 
   .carousel-item {
-    width: 120px;
+    width: 112px;
   }
 }

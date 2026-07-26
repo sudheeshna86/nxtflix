@@ -4,21 +4,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.25rem;
 }
 
 .login-card {
   background-color: #171717;
-  padding: 2.5rem;
-  border-radius: 8px;
+  padding: 2.25rem;
+  border-radius: 10px;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
 }
 
 .login-heading {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   color: #fff;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.75rem 0;
   font-weight: bold;
 }
 
@@ -60,14 +60,14 @@
 }
 
 .form-input {
-  padding: 0.65rem 1rem;
-  background-color: #333;
-  border: 1px solid #444;
+  padding: 0.55rem 0.95rem;
+  background-color: #1f1f1f;
+  border: 1px solid #2f2f2f;
   border-radius: 4px;
   color: #fff;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .form-input::placeholder {

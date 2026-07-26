@@ -17,7 +17,7 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="header-left">
-          <h1 className="header-logo">NXTFLIX</h1>
+          <Link to="/" className="header-logo">NXTFLIX</Link>
         </div>
 
         <div className="header-right">

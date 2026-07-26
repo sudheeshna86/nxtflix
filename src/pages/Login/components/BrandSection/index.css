@@ -11,13 +11,14 @@
 .brand-section::before {
   content: '';
   position: absolute;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(220, 20, 20, 0.3) 0%, transparent 75%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(220, 20, 20, 0.2) 0%, transparent 55%);
   border-radius: 50%;
   top: 50%;
-  left: -350px;
+  left: -420px;
   transform: translateY(-50%);
+  filter: blur(12px);
   pointer-events: none;
 }
 
@@ -25,22 +26,22 @@
   position: relative;
   z-index: 1;
   text-align: left;
-  max-width: 400px;
-  padding: 2rem;
+  max-width: 380px;
+  padding: 1.75rem 2rem 2rem;
 }
 
 .brand-logo {
   font-size: 3rem;
   color: #dc1414;
   font-weight: bold;
-  margin: 0 0 2rem 0;
+  margin: -0.5rem 0 1.5rem 0;
   letter-spacing: 2px;
 }
 
 .brand-tagline {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #fff;
-  line-height: 1.6;
+  line-height: 1.45;
   margin: 0;
 }
 

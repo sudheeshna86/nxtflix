@@ -14,6 +14,9 @@ function MovieCarousel({ title, movies, direction = 'left' }) {
               <MovieCard
                 id={movie.id}
                 poster={movie.poster}
+                title={movie.title}
+                genre={movie.genre}
+                rating={movie.rating}
                 variant="carousel"
               />
             </div>
